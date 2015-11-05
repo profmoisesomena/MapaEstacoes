@@ -1,8 +1,7 @@
 var map;
 // Inicializando o mapa do openstreetmap no index
-function initmap(pontos)
+function initmap()
 {
-  alert("oi");
   init();
 
 }
