@@ -37,8 +37,7 @@ function getData()
                  longitude = value;
               }
               else{
-                alert ("value");
-                L.marker([latitude, longitude]).addTo(map);
+                L.marker([latitude, longitude]).addTo(map).bindPopup("<br> <b>Cidade: </b>"+value+"</br>");
               }
 		        });
 		    });
