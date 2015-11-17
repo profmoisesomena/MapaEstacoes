@@ -22,7 +22,7 @@ function getData()
 
   $.ajax({
 		type: "get",
-		url: "http://localhost:5000/pontos",
+		url: "http://localhost:5000/estacoes",
 		cache: false,
 	  Accept : "application/json",
     contentType: "application/json",
