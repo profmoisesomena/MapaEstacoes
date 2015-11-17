@@ -1,16 +1,6 @@
 import json
 from app import db
-from app.gestao_dados.util import Ponto
-
-"""Classe base do modelo"""
-class Base(db.Model):
-
-    __abstract__  = True
-
-    id            = db.Column(db.Integer, primary_key=True)
-    date_created  = db.Column(db.DateTime,  default=db.func.current_timestamp())
-    date_modified = db.Column(db.DateTime,  default=db.func.current_timestamp(),
-                                           onupdate=db.func.current_timestamp())
+from app.gestao_dados.util import Ponto, Base
 
 
 """Classe que representando uma Estacao Meterologica """
@@ -18,7 +8,6 @@ class Estacao_Meterologica (Base):
 
     __tablename__ = 'Estacao_Meterologica'
 
-    id = db.Column(db.Integer, primary_key=True)
     nome_cidade = db.Column(db.String(80), unique=True)
     latitude = db.Column(db.Float)
     longitude = db.Column(db.Float)
