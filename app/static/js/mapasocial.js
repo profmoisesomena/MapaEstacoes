@@ -48,6 +48,4 @@ function getData()
 		}
 	});
 
-
-  //L.marker([-20.3477821, -40.2949528]).addTo(map);
 }
