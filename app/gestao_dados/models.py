@@ -1,4 +1,3 @@
-
 import json
 from app import db
 from app.gestao_dados.util import Ponto
