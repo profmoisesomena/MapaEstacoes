@@ -24,4 +24,4 @@ from app.gestao_dados.controllers import mod_gestao_dados as modulo_getao_dados
 
 app.register_blueprint(modulo_getao_dados)
 
-db.create_all()
+#db.create_all()

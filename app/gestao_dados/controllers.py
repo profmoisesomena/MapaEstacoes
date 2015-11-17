@@ -14,7 +14,7 @@ def estados():
     estacoes_meterologicas = {}
 
     for estacao_meterologica in Estacao_Meterologica.findAll():
-        estacoes_meterologicas[estacao_meterologica.nome_cidade] = estacao_meterologica.to_JSON()
+        estacoes_meterologicas[estacao_meterologica.municipio] = estacao_meterologica.to_JSON()
 
     return json.dumps(estacoes_meterologicas)
 

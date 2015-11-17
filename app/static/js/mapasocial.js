@@ -7,7 +7,7 @@ function initmap()
   // create the tile layer with correct attribution
   var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   var osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 12});
-  map.setView(new L.LatLng(-20.297618, -40.295777),12);
+  map.setView(new L.LatLng(-20.297618, -40.295777),10);
   map.addLayer(osm);
   getData();
 }
@@ -18,6 +18,7 @@ function getData()
   var latitude;
   var longitude;
   var nome;
+  var chuva;
 
   $.ajax({
 		type: "get",
@@ -30,14 +31,24 @@ function getData()
 			$.each(JSON.parse(response),function(idx, obj){
 
             $.each(JSON.parse(obj), function(key, value){
-              if (key == "latitude")
-                latitude = value;
-              else if (key=="longitude") {
 
-                 longitude = value;
+              if (key == "chuva"){
+                  chuva = value;
               }
-              else{
-                L.marker([latitude, longitude]).addTo(map).bindPopup("<br> <b>Cidade: </b>"+value+"</br>");
+              if (key == "latitude"){
+                  latitude = value
+              }
+
+              if (key == "longitude"){
+                longitude = value;
+              }
+
+              if (key == "municipio"){
+                nome = value;
+              }
+              if (chuva!= null && latitude!=null & longitude!= null & nome!=null){
+                  L.marker([latitude, longitude]).addTo(map).bindPopup("<b>Cidade: </b>"+value+" <br> <b>Chuva: </b>"+chuva+" mm");
+                  chuva = latitude = longitude = nome = null;
               }
 		        });
 		    });
