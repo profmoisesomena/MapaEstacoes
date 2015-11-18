@@ -21,7 +21,7 @@ O Mapa Social é um exemplo de aplicação web que visa apresentar como construi
 
 ### Converter e analisar dados de diferentes fontes e formatos
 
-Para quem conhece um pouco de programação sabe que essa tarefa é um pouco dificil de ser realizada. Afinal, é necessário pelo menos, saber o formato do arquivo, tratar palavas com acentos e fazer a inserção desses dados na tabela do banco. Dependendo da linguagem e tecnologia a ser utilizada, isso pode gerar alguns dias de trabalho. 
+Para quem conhece um pouco de programação sabe que essa tarefa é um pouco difícil de ser realizada. Afinal, é necessário pelo menos, saber o formato do arquivo, tratar palavras com acentos e fazer a inserção desses dados na tabela do banco. Dependendo da linguagem e tecnologia a ser utilizada, isso pode gerar alguns dias de trabalho. 
 
 Para agilizar esse processo utilizamos o __Pandas__. Com poucas linhas conseguimos ler o arquivo com os dados e inseri-los no banco de dados, como pode ser visto no código abaixo:
 
