@@ -12,13 +12,28 @@ O Mapa Social é um exemplo de aplicação web que visa apresentar como construi
 * __Repositório de códigos__: [Git](https://git-scm.com)
 
 ## Alguns problemas ao trabalhar com GIS para internet:
-* Dificuldade em plotar dados em mapas em diversos dispositivo móveis; 
-* Dificuldade em converter e analisar dados de diferentes fontes e formatos;
 
-##Por que usamos essas tecnologias?
+1 Dificuldade em converter e analisar dados de diferentes fontes e formatos;
+2 Dificuldade em plotar pontos em mapas para aplicações que serão utilizadas em diversos dispositivo móveis; 
 
+##Como solucionamos o problemas?
 
+Primeiro, é necessário trabalhar com a conversão dos dados e amazer essas informações em um banco de dados. Para quem conhece um pouco de programação saber que essa tarefa é um pouco dificil de ser realizada. Afinal, é necessário saber o formato do arquivo, tratar palavas com acentos e fazer a inserção desses dados na tabela do banco. Dependendo da linguagem e tecnologia a ser utilizada, isso pode gerar alguns dias de trabalho. 
 
+Para agilizar esse processo utilizamos o __Pandas__. Com poucas linhas conseguimos ler o arquivo com os dados e inseri-los no banco de dados, como pode ser visto no código abaixo:
+
+```python
+import pandas as pd
+import psycopg2
+import sqlalchemy
+from sqlalchemy import create_engine
+dados_estacoes =pd.read_csv("estacoes_es.csv", encoding='latin-1',sep=';')
+engine = create_engine('postgresql://postgres:123456@localhost:5432/sigmap')
+df = pd.DataFrame(dados_estacoes)
+df.to_sql('estacoes_es', engine)
+```
+
+Perceba no código acima que em poucas linhas conseguimos ler 
 ##Instalação
 
 __É importante comentar que a instalação foi realizada em um ambiente Linux__.
