@@ -24,11 +24,9 @@ Etapas para a construção do ambiente:
 * __Instalar Virtualenv__: o Virtualenv é ambiente virtual para desenvolvimento de soluções em python. Através desse é possível isolar o ambiente de desenvolvimento do restante do sistema operacional. Dessa forma, é possível ter diversos ambientes de desenvolvimento com diferentes configurações no mesmo sistema operacional. Para realizar instalação e entender um pouco mais sobre o __Virtualenv__ acesse esse [link](https://pythonhelp.wordpress.com/2012/10/17/virtualenv-ambientes-virtuais-para-desenvolvimento/) (https://pythonhelp.wordpress.com/2012/10/17/virtualenv-ambientes-virtuais-para-desenvolvimento/);
 * __Crie um ambiente virtual de desenvolvimento com Virtualenv__: veja no tutorial como criar um ambiente virtual. Por exemplo: `Virtualenv mapasocial`
 * __Ativar o Virtualenv__: ative o virtualenv com o seguinte comando: `source ./mapasocial/bin/activate`
-* __Pegar o código do Mapa social no git__: para pegar o código do mapa social basta executar o seguinte comando: git clone 
-* __Instalar o Flask, Pandas, SQLAlchemy e tudo mais que precisamos para o projeto__:
-
-
-
+* __Pegar o código do Mapa social no git__: para pegar o código do mapa social basta executar o seguinte comando: `git clone https://github.com/LEDS/MapaSocial.git` 
+* __Instalar o Flask, Pandas, SQLAlchemy e tudo mais que precisamos para o projeto e que não foi instalado__: dentro da pasta mapasocial tem um arquivo chamado __requeriment.txt__ que contém o nome de todas as bibliotecas necessárias para que o projeto funcione. Para instalar esses bibliotecas basta executar o seguinte comando: `pip install -r requeriments.txt`. Magicamente o pip irá instalar tudo que é necessário para o projeto.
+* __Executar a aplicação__: digite o seguinte comando: `python run.py`. Após isso abra o navegador e digite: `http://localhost:5000` e veja a magia acontecer :)
 
 ##Referências
 * [__How To Structure Large Flask Applications__](https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications)
