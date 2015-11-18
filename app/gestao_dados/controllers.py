@@ -18,11 +18,11 @@ def estacoes():
 
     return json.dumps(estacoes_meteorologicas)
 
-@mod_gestao_dados.route('/municipios')
-def municipios():
+@mod_gestao_dados.route('/municipios/<nome_municipio>')
+def municipios(nome_municipio):
     municipios_estacoes={}
 
-    for estacao_meteorologica in Estacao_Meteorologica.find_name('ECOPORANGA'):
+    for estacao_meteorologica in Estacao_Meteorologica.find_name(nome_municipio):
         municipios_estacoes[estacao_meteorologica.municipio] =  estacao_meteorologica.to_JSON()
 
     return json.dumps(municipios_estacoes)
