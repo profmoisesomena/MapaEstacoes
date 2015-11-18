@@ -2,7 +2,7 @@
 
 ##Introdução
 
-O Mapa Social é um exemplo de aplicação web que visa apresentar como construir sitemas de apresentação de dados georreferenciados com base nos moldes dos Geographic Information System (GIS) utilizando tecnologias livres.Nesta aplicação inicial demonstramos como é possível apresentar em um mapa 110 estações meteorológicas do estado do Espírito Santo. Para o desenvolvimento da aplicação utilizamos as seguintes tecnologias:
+O Mapa Social é um exemplo de aplicação web que visa apresentar como construir sistemas de apresentação de dados georreferenciados com base nos moldes dos Geographic Information System (GIS) utilizando tecnologias livres.Nesta aplicação inicial demonstramos como é possível apresentar em um mapa 110 estações meteorológicas do estado do Espírito Santo. Para o desenvolvimento da aplicação utilizamos as seguintes tecnologias:
 
 * __Linguagem de Programação__: [Python] (https://www.python.org) 
 * __Framework Web__: [Flask](http://flask.pocoo.org)
