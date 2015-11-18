@@ -12,12 +12,12 @@ O Mapa Social é um exemplo de aplicação web que visa apresentar como construi
 * __Biblioteca JavaScript para manipulação de mapas__: [LeafLet](http://leafletjs.com)
 * __Repositório de códigos__: [Git](https://git-scm.com)
 
-## Alguns problemas ao trabalhar com GIS para internet:
+## Alguns problemas encontrados ao trabalhar com GIS para internet:
 
 * Dificuldade em converter e analisar dados de diferentes fontes e formatos;
 * Dificuldade em plotar pontos em mapas para aplicações que serão utilizadas em diversos dispositivo móveis; 
 
-##Como solucionamos o problemas?
+##Como solucionamos os problemas?
 
 ### Converter e analisar dados de diferentes fontes e formatos
 
@@ -37,7 +37,7 @@ df.to_sql('estacoes_es', engine)
 ```
 Perceba no código acima que em poucas linhas conseguimos ler o arquivo csv e salvar no banco de dados de uma forma simples e rápida.
 
-Ih agora como lemos esses dados do banco de dados? Bem, para fazer essa tarefa árdua utilizamos o biblioteca __SQLAlchemy__.O SQLAlchemy permite realizar o mapeamento do código do programa como banco de dados de uma forma transparente. A class Estacao_Meterologica representa as estações meteorologicas e essa esta associada a tabela do banco de dados estacao_meteorologica. 
+E agora, como lemos esses dados do banco de dados? Bem, para fazer essa tarefa árdua utilizamos o biblioteca __SQLAlchemy__.O SQLAlchemy permite realizar o mapeamento do código do programa como banco de dados de uma forma transparente. A class Estacao_Meterologica representa as estações meteorologicas e essa esta associada a tabela do banco de dados estacao_meteorologica. 
 
 ```python
 
@@ -94,7 +94,7 @@ Etapas para a construção do ambiente:
 
 * __Instalar Python__: para instalar o python veja o tutorial presente na documentação da linguagem.
 * __Instalar o git__: para instalar o git veja o tutorial presente na documentação da ferramenta.
-* __Instalar Postgresql__: para instalar o Postgresl veja o tutorial presente na documentação do banco de dados.
+* __Instalar Postgresql__: para instalar o Postgresql veja o tutorial presente na documentação do banco de dados.
 * __Instalar Virtualenv__: o Virtualenv é ambiente virtual para desenvolvimento de soluções em python. Através desse é possível isolar o ambiente de desenvolvimento do restante do sistema operacional. Dessa forma, é possível ter diversos ambientes de desenvolvimento com diferentes configurações no mesmo sistema operacional. Para realizar instalação e entender um pouco mais sobre o __Virtualenv__ acesse esse [link](https://pythonhelp.wordpress.com/2012/10/17/virtualenv-ambientes-virtuais-para-desenvolvimento/) 
 * __Crie um ambiente virtual de desenvolvimento com Virtualenv__: veja no tutorial como criar um ambiente virtual. Por exemplo: `Virtualenv mapasocial`
 * __Ativar o Virtualenv__: ative o virtualenv com o seguinte comando: `source ./mapasocial/bin/activate`
@@ -104,7 +104,7 @@ Etapas para a construção do ambiente:
 
 ##Fontes dos dados
 
-O Banco de dados foi gerado a patir de médias mensais referentes ao périodo de 30 anos (1977 a 2006), obtidas por meio do sistema de informações hidrológicas (HidoWEB) da ANA (Agencia Nascional de Águas), INMET (Instituto de Nascional de Meteorologia), INCAPER (Instituto Capixaba de Pesquisa, Assistência Técnica e Extensão Rural). O banco de dados contém somente as seguintes informações:
+O Banco de dados foi gerado a patir de médias mensais de precipitação referentes ao périodo de 30 anos (1977 a 2006), obtidas por meio do sistema de informações hidrológicas (HidoWEB) da ANA (Agencia Nascional de Águas), INMET (Instituto de Nascional de Meteorologia), INCAPER (Instituto Capixaba de Pesquisa, Assistência Técnica e Extensão Rural). Para nosso exemplo, o banco de dados contém somente as seguintes informações:
 
 * Código da estação meteorológicas
 * Municipio na qual está a meteorológicas
