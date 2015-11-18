@@ -75,7 +75,7 @@ Esssa classe permite salvar uma estação meteorologica e buscar todas as estaç
 
 Agora como ligar o banco de dados com o mapa? Simples, vamos usar o __Flask__. Através do Flask é possível criar uma aplicação web que pega as informações do banco de dados, através da classe Estacao_Meteorologica, e retorna os dados plotando os pontos na  página web que contém o mapa. 
 
-```
+```python
 from flask import Flask, render_template,Blueprint
 from app.gestao_dados.models import Estacao_Meteorologica
 import json
