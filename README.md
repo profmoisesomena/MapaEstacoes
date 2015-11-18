@@ -2,7 +2,8 @@
 
 ##Introdução
 
-O Mapa Social é um exemplo de aplicação web que visa apresentar como construir um Geographic Information Sistema (GIS) utilizando tecnologias livres. A aplicação demonstrar todas as estações meteorológicas do estado do Espírito Santo. Para o desenvolvimento da aplicação utilizamos as seguintes tecnologias: 
+O Mapa Social é um exemplo de aplicação web que visa apresentar como construir sitemas de apresentação de dados georreferenciados com base nos moldes dos Geographic Information Sistema (GIS) utilizando tecnologias livres. Nesta aplicação inicial demonstramos como é possível apresentar em um mapa 110 as estações meteorológicas do Estado do Espírito Santo. Para o desenvolvimento da aplicação utilizamos as seguintes tecnologias:
+
 * __Linguagem de Programação__: [Python] (https://www.python.org) 
 * __Framework Web__: [Flask](http://flask.pocoo.org)
 * __Framework de ORM__: [SQLAlchemy](http://www.sqlalchemy.org) 
@@ -49,9 +50,9 @@ Para realizar a plotagem dos pontos em um dispositivo móvel utilizamos a biblio
   map.setView(new L.LatLng(-20.297618, -40.295777),12);
   map.addLayer(osm);
 ```
-Perceba que o código acima, é possível apresentar um mapa do [OpenStreet Maps](https://www.openstreetmap.org) de uma forma simples. Além disso, o código demonstra como configuar: 
+Perceba que o código acima, é possível apresentar um mapa do [OpenStreet Maps](https://www.openstreetmap.org) de uma forma simples. Além disso, o código demonstra como configurar: 
 * O máximo e mínimo de zoom que o mapa aceita;
-* O ponto central do mapa
+* O ponto central do mapa;
 
 Para plotar um ponto no mapa é um trabalho mais simples do que o ato de criar o mapa. No código abaixo, pedimos ao Leaflet que coloque uma Marker na latitude e longitude desejada e coloque um Popup, acima do ponto, informando o nome da cidade que representa o marker.
 
