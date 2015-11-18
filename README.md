@@ -37,7 +37,34 @@ df.to_sql('estacoes_es', engine)
 ```
 Perceba no código acima que em poucas linhas conseguimos ler o arquivo csv e salvar no banco de dados de uma forma simples e rápida.
 
-Ih agora como lemos esses dados do banco de dados? Bem, para fazer essa tarefa árdua utilizamos o biblioteca __SQLAlchemy__. Através dela é possível 
+Ih agora como lemos esses dados do banco de dados? Bem, para fazer essa tarefa árdua utilizamos o biblioteca __SQLAlchemy__.O SQLAlchemy permite realizar o mapeamento do código do programa como banco de dados de uma forma transparente. A class Estacao_Meterologica representa as estações meteorologicas e essa esta associada a tabela do banco de dados estacao_meteorologica. 
+
+```python
+
+"""Classe que representando uma Estacao Meterologica """
+class Estacao_Meterologica (Base):
+
+    __tablename__ = 'estacao_meteorologica'
+
+    cod_estacao = db.Column('Estacao',db.String(255), unique=True)
+    municipio = db.Column('Municipios',db.String(255))
+    chuva =  db.Column('CHUVA',db.Float)
+    latitude = db.Column('Y_coord',db.Float)
+    longitude = db.Column('X_coord',db.Float)
+
+    def to_JSON(self):
+        ponto = Ponto(self.latitude, self.longitude, self.municipio,self.chuva)
+        return ponto.to_JSON()
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @staticmethod
+    def findAll():
+        return Estacao_Meterologica.query.all()
+```
+Esssa classe permite salvar uma estação meteorologica e buscar todas as estações meteorologicas do Espírito santo.
 
 ### Plotar os pontos em mapas para aplicações móveis
 
