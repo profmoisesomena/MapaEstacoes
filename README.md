@@ -22,8 +22,8 @@ Etapas para a construção do ambiente:
 * __Instalar o git__: para instalar o git veja o tutorial presente na documentação da ferramenta.
 * __Instalar Postgresql__: para instalar o Postgresl veja o tutorial presente na documentação do banco de dados.
 * __Instalar Virtualenv__: o Virtualenv é ambiente virtual para desenvolvimento de soluções em python. Através desse é possível isolar o ambiente de desenvolvimento do restante do sistema operacional. Dessa forma, é possível ter diversos ambientes de desenvolvimento com diferentes configurações no mesmo sistema operacional. Para realizar instalação e entender um pouco mais sobre o __Virtualenv__ acesse esse [link](https://pythonhelp.wordpress.com/2012/10/17/virtualenv-ambientes-virtuais-para-desenvolvimento/) (https://pythonhelp.wordpress.com/2012/10/17/virtualenv-ambientes-virtuais-para-desenvolvimento/);
-* __Crie um ambiente virtual de desenvolvimento com Virtualenv__: veja no tutorial como criar um ambiente virtual. Por exemplo: __Virtualenv mapasocial__
-* __Ativar o Virtualenv__: ative o virtualenv com o seguinte comando: source ./mapasocial/bin/activate
+* __Crie um ambiente virtual de desenvolvimento com Virtualenv__: veja no tutorial como criar um ambiente virtual. Por exemplo: `Virtualenv mapasocial`
+* __Ativar o Virtualenv__: ative o virtualenv com o seguinte comando: `source ./mapasocial/bin/activate`
 * __Pegar o código do Mapa social no git__: para pegar o código do mapa social basta executar o seguinte comando: git clone 
 * __Instalar o Flask, Pandas, SQLAlchemy e tudo mais que precisamos para o projeto__:
 
