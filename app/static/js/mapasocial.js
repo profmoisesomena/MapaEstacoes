@@ -46,7 +46,7 @@ function getData()
               if (key == "municipio"){
                 nome = value;
               }
-              if (chuva!= null && latitude!=null & longitude!= null & nome!=null){
+              if (chuva!= null && latitude!=null && longitude!= null && nome!=null){
                   L.marker([latitude, longitude]).addTo(map).bindPopup("<b>Cidade: </b>"+value+" <br> <b>Chuva: </b>"+chuva+" mm");
                   chuva = latitude = longitude = nome = null;
               }
