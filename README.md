@@ -40,9 +40,12 @@ Perceba no código acima que em poucas linhas conseguimos ler o arquivo csv e sa
 E agora, como lemos esses dados do banco de dados? Bem, para fazer essa tarefa árdua utilizamos o biblioteca __SQLAlchemy__.O SQLAlchemy permite realizar o mapeamento do código do programa como banco de dados de uma forma transparente. A class Estacao_Meterologica representa as estações meteorologicas e essa esta associada a tabela do banco de dados estacao_meteorologica. 
 
 ```python
+import json
+from app import db
+from app.gestao_dados.util import Ponto, Base
 
 """Classe que representando uma Estacao Meterologica """
-class Estacao_Meterologica (Base):
+class Estacao_Meteorologica (Base):
 
     __tablename__ = 'estacao_meteorologica'
 
@@ -62,10 +65,46 @@ class Estacao_Meterologica (Base):
 
     @staticmethod
     def findAll():
-        return Estacao_Meterologica.query.all()
+        return Estacao_Meteorologica.query.all()
+
+    @staticmethod
+    def find_name(municipio):
+        return Estacao_Meteorologica.query.filter_by(municipio = municipio).all()
 ```
 Esssa classe permite salvar uma estação meteorologica e buscar todas as estações meteorologicas do Espírito santo.
 
+Agora como ligar o banco de dados com o mapa? Simples, vamos usar o __Flask__. Através do Flask é possível criar uma aplicação web que pega as informações do banco de dados, através da classe Estacao_Meteorologica, e retorna os dados plotando os pontos na  página web que contém o mapa. 
+
+```
+from flask import Flask, render_template,Blueprint
+from app.gestao_dados.models import Estacao_Meteorologica
+import json
+mod_gestao_dados = Blueprint('gestao_dados', __name__)
+
+@mod_gestao_dados.route('/')
+def index():
+    return render_template('index.html')
+
+@mod_gestao_dados.route('/estacoes')
+def estacoes():
+
+    estacoes_meteorologicas = {}
+
+    for estacao_meteorologica in Estacao_Meteorologica.findAll():
+        estacoes_meteorologicas[estacao_meteorologica.municipio] = estacao_meteorologica.to_JSON()
+
+
+    return json.dumps(estacoes_meteorologicas)
+
+@mod_gestao_dados.route('/municipios/<nome_municipio>')
+def municipios(nome_municipio):
+    municipios_estacoes={}
+
+    for estacao_meteorologica in Estacao_Meteorologica.find_name(nome_municipio):
+        municipios_estacoes[estacao_meteorologica.municipio] =  estacao_meteorologica.to_JSON()
+
+    return json.dumps(municipios_estacoes)
+```    
 ### Plotar os pontos em mapas para aplicações móveis
 
 Para realizar a plotagem dos pontos em um dispositivo móvel utilizamos a biblioteca JavaScript chamada __Leaflet__. Essa biblioteca foi desenvolvida pela equipe do [Foursquare](https://pt.foursquare.com). Diferente de outras biblioteca de mapas, o Leaflet foi desenvolvida para auxiliar no desenvolvimento de sistemas moveis. Isso pode ser comprovado pelo tamanho dessa, afinal, essa possui apenas 33k de tamanho. Outro ponto importante da biblioteca é simplicidade de uso. Veja o código abaixo:
