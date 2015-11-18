@@ -2,7 +2,7 @@
 
 ##Introdução
 
-O Mapa Social é um exemplo de aplicação web que visa apresentar como construir sitemas de apresentação de dados georreferenciados com base nos moldes dos Geographic Information Sistema (GIS) utilizando tecnologias livres. Nesta aplicação inicial demonstramos como é possível apresentar em um mapa 110 as estações meteorológicas do Estado do Espírito Santo. Para o desenvolvimento da aplicação utilizamos as seguintes tecnologias:
+O Mapa Social é um exemplo de aplicação web que visa apresentar como construir sitemas de apresentação de dados georreferenciados com base nos moldes dos Geographic Information System (GIS) utilizando tecnologias livres.Nesta aplicação inicial demonstramos como é possível apresentar em um mapa 110 estações meteorológicas do estado do Espírito Santo. Para o desenvolvimento da aplicação utilizamos as seguintes tecnologias:
 
 * __Linguagem de Programação__: [Python] (https://www.python.org) 
 * __Framework Web__: [Flask](http://flask.pocoo.org)
@@ -37,7 +37,7 @@ df.to_sql('estacoes_es', engine)
 ```
 Perceba no código acima que em poucas linhas conseguimos ler o arquivo csv e salvar no banco de dados de uma forma simples e rápida.
 
-E agora, como lemos esses dados do banco de dados? Bem, para fazer essa tarefa árdua utilizamos o biblioteca __SQLAlchemy__.O SQLAlchemy permite realizar o mapeamento do código do programa como banco de dados de uma forma transparente. A class Estacao_Meterologica representa as estações meteorologicas e essa esta associada a tabela do banco de dados estacao_meteorologica. 
+E agora, como lemos esses dados do banco de dados? Bem, para fazer essa tarefa árdua utilizamos o biblioteca __SQLAlchemy__.O SQLAlchemy permite realizar o mapeamento do código do programa como banco de dados de uma forma transparente. A classe Estacao_Meterologica representa as estações meteorologicas e essa está associada a tabela do banco de dados estacao_meteorologica. 
 
 ```python
 import json
@@ -71,7 +71,7 @@ class Estacao_Meteorologica (Base):
     def find_name(municipio):
         return Estacao_Meteorologica.query.filter_by(municipio = municipio).all()
 ```
-Esssa classe permite salvar uma estação meteorologica e buscar todas as estações meteorologicas do Espírito santo.
+Essa classe permite salvar uma estação meteorológica e buscar todas as estações meteorologicas do Espírito Santo.
 
 Agora como ligar o banco de dados com o mapa? Simples, vamos usar o __Flask__. Através do Flask é possível criar uma aplicação web que pega as informações do banco de dados, através da classe Estacao_Meteorologica, e retorna os dados plotando os pontos na  página web que contém o mapa. 
 
@@ -107,7 +107,7 @@ def municipios(nome_municipio):
 ```    
 ### Plotar os pontos em mapas para aplicações móveis
 
-Para realizar a plotagem dos pontos em um dispositivo móvel utilizamos a biblioteca JavaScript chamada __Leaflet__. Essa biblioteca foi desenvolvida pela equipe do [Foursquare](https://pt.foursquare.com). Diferente de outras biblioteca de mapas, o Leaflet foi desenvolvida para auxiliar no desenvolvimento de sistemas moveis. Isso pode ser comprovado pelo tamanho dessa, afinal, essa possui apenas 33k de tamanho. Outro ponto importante da biblioteca é simplicidade de uso. Veja o código abaixo:
+Para realizar a plotagem dos pontos em um dispositivo móvel utilizamos a biblioteca JavaScript chamada __Leaflet__. Essa biblioteca foi desenvolvida pela equipe do [Foursquare](https://pt.foursquare.com). Diferente de outras bibliotecas de mapas, o Leaflet foi desenvolvida para auxiliar no desenvolvimento de sistemas móveis. Isso pode ser comprovado pelo tamanho dessa, afinal, essa possui apenas 33k de tamanho. Outro ponto importante da biblioteca é simplicidade de uso. Veja o código abaixo:
 
 ```javascript
   var map = new L.Map('map');
@@ -116,7 +116,7 @@ Para realizar a plotagem dos pontos em um dispositivo móvel utilizamos a biblio
   map.setView(new L.LatLng(-20.297618, -40.295777),12);
   map.addLayer(osm);
 ```
-Perceba que o código acima, é possível apresentar um mapa do [OpenStreet Maps](https://www.openstreetmap.org) de uma forma simples. Além disso, o código demonstra como configurar: 
+Perceba que com o código acima, é possível apresentar um mapa do [OpenStreet Maps](https://www.openstreetmap.org) de uma forma simples. Além disso, o código demonstra como configurar: 
 * O máximo e mínimo de zoom que o mapa aceita;
 * O ponto central do mapa;
 
@@ -134,19 +134,19 @@ Etapas para a construção do ambiente:
 * __Instalar Python__: para instalar o python veja o tutorial presente na documentação da linguagem.
 * __Instalar o git__: para instalar o git veja o tutorial presente na documentação da ferramenta.
 * __Instalar Postgresql__: para instalar o Postgresql veja o tutorial presente na documentação do banco de dados.
-* __Instalar Virtualenv__: o Virtualenv é ambiente virtual para desenvolvimento de soluções em python. Através desse é possível isolar o ambiente de desenvolvimento do restante do sistema operacional. Dessa forma, é possível ter diversos ambientes de desenvolvimento com diferentes configurações no mesmo sistema operacional. Para realizar instalação e entender um pouco mais sobre o __Virtualenv__ acesse esse [link](https://pythonhelp.wordpress.com/2012/10/17/virtualenv-ambientes-virtuais-para-desenvolvimento/) 
-* __Crie um ambiente virtual de desenvolvimento com Virtualenv__: veja no tutorial como criar um ambiente virtual. Por exemplo: `Virtualenv mapasocial`
+* __Instalar Virtualenv__: o Virtualenv é ambiente virtual para desenvolvimento de soluções em python. Através desse é possível isolar o ambiente de desenvolvimento do restante do sistema operacional. Dessa forma, é possível ter diversos ambientes de desenvolvimento com diferentes configurações no mesmo sistema operacional. Para realizar instalação e entender um pouco mais sobre o __Virtualenv__ acesse esse
+* [link](https://pythonhelp.wordpress.com/2012/10/17/virtualenv-ambientes-virtuais-para-desenvolvimento/) 
+* __Criar um ambiente virtual de desenvolvimento com Virtualenv__: veja no tutorial como criar um ambiente virtual. Por exemplo: `Virtualenv mapasocial`
 * __Ativar o Virtualenv__: ative o virtualenv com o seguinte comando: `source ./mapasocial/bin/activate`
 * __Pegar o código do Mapa social no git__: para pegar o código do mapa social basta executar o seguinte comando: `git clone https://github.com/LEDS/MapaSocial.git` 
-* __Instalar o Flask, Pandas, SQLAlchemy e tudo mais que precisamos para o projeto e que não foi instalado__: dentro da pasta mapasocial tem um arquivo chamado __requeriment.txt__ que contém o nome de todas as bibliotecas necessárias para que o projeto funcione. Para instalar esses bibliotecas basta executar o seguinte comando: `pip install -r requeriments.txt`. Magicamente o pip irá instalar tudo que é necessário para o projeto.
+* __Instalar o Flask, Pandas, SQLAlchemy e tudo mais que precisamos para o projeto e que não foi instalado__: dentro da pasta mapasocial tem um arquivo chamado __requeriment.txt__ que contém o nome de todas as bibliotecas necessárias para que o projeto funcione. Para instalar esses bibliotecas, basta executar o seguinte comando: `pip install -r requeriments.txt`. Magicamente o pip irá instalar tudo que é necessário para o projeto.
 * __Executar a aplicação__: digite o seguinte comando: `python run.py`. Após isso abra o navegador e digite: `http://localhost:5000` e veja a magia acontecer :)
 
 ##Fontes dos dados
 
-O Banco de dados foi gerado a patir de médias mensais de precipitação referentes ao périodo de 30 anos (1977 a 2006), obtidas por meio do sistema de informações hidrológicas (HidoWEB) da ANA (Agencia Nascional de Águas), INMET (Instituto de Nascional de Meteorologia), INCAPER (Instituto Capixaba de Pesquisa, Assistência Técnica e Extensão Rural). Para nosso exemplo, o banco de dados contém somente as seguintes informações:
-
-* Código da estação meteorológicas
-* Municipio na qual está a meteorológicas
+O Banco de dados foi gerado a patir de médias mensais de precipitação referentes ao período de 30 anos (1977 a 2006), obtidas por meio do sistema de informações hidrológicas (HidoWEB) da ANA (Agencia Nascional de Águas), INMET (Instituto de Nascional de Meteorologia), INCAPER (Instituto Capixaba de Pesquisa, Assistência Técnica e Extensão Rural). Para nosso exemplo, o banco de dados contém somente as seguintes informações:
+* Código das estações meteorológicas
+* Municipio na qual estão as estações meteorológicas
 * Precipitação (Chuva)
 * Longitude
 * Latitude
