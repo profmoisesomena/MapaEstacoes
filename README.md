@@ -123,7 +123,7 @@ Perceba que com o código acima, é possível apresentar um mapa do [OpenStreet 
 Para plotar um ponto no mapa é um trabalho mais simples do que o ato de criar o mapa. No código abaixo, pedimos ao Leaflet que coloque uma Marker na latitude e longitude desejada e coloque um Popup, acima do ponto, informando o nome da cidade que representa o marker.
 
 ```javascript
-  L.marker([latitude, longitude]).addTo(map).bindPopup("<br> <b>Cidade: </b>"+value+"</br>");
+   L.marker([latitude, longitude]).addTo(map).bindPopup("<b>Cidade: </b>"+value+" <br> <b>Chuva: </b>"+chuva+" mm");
 ```
 
 ##Instalação
