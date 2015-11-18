@@ -4,7 +4,7 @@ from app.gestao_dados.util import Ponto, Base
 
 
 """Classe que representando uma Estacao Meterologica """
-class Estacao_Meterologica (Base):
+class Estacao_Meteorologica (Base):
 
     __tablename__ = 'estacao_meteorologica'
 
@@ -24,4 +24,8 @@ class Estacao_Meterologica (Base):
 
     @staticmethod
     def findAll():
-        return Estacao_Meterologica.query.all()
+        return Estacao_Meteorologica.query.all()
+
+    @staticmethod
+    def find_name(municipio):
+        return Estacao_Meteorologica.query.filter_by(municipio = municipio).all()

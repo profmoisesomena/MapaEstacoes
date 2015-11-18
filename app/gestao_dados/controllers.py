@@ -1,6 +1,6 @@
 from flask import Flask, render_template,Blueprint
-from app.gestao_dados.models import Estacao_Meterologica
-
+from app.gestao_dados.models import Estacao_Meteorologica
+import json
 mod_gestao_dados = Blueprint('gestao_dados', __name__)
 
 @mod_gestao_dados.route('/')
@@ -10,9 +10,19 @@ def index():
 @mod_gestao_dados.route('/estacoes')
 def estacoes():
 
-    estacoes_meterologicas = {}
+    estacoes_meteorologicas = {}
 
-    for estacao_meterologica in Estacao_Meterologica.findAll():
-        estacoes_meterologicas[estacao_meterologica.municipio] = estacao_meterologica.to_JSON()
+    for estacao_meteorologica in Estacao_Meteorologica.findAll():
+        estacoes_meteorologicas[estacao_meteorologica.municipio] = estacao_meteorologica.to_JSON()
 
-    return json.dumps(estacoes_meterologicas)
+
+    return json.dumps(estacoes_meteorologicas)
+
+@mod_gestao_dados.route('/municipios')
+def municipios():
+    municipios_estacoes={}
+
+    for estacao_meteorologica in Estacao_Meteorologica.find_name('ECOPORANGA'):
+        municipios_estacoes[estacao_meteorologica.municipio] =  estacao_meteorologica.to_JSON()
+
+    return json.dumps(municipios_estacoes)
