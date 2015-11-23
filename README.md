@@ -158,5 +158,5 @@ O Banco de dados foi gerado a patir de médias mensais de precipitação referen
 * [__Construindo uma aplicação com Flask, Postgresql e OpenShift__](https://blog.openshift.com/build-your-app-on-openshift-using-flask-sqlalchemy-and-postgresql-92/)
 
 ##Autores
-[Paulo Sérgio dos Santos Júnior](paulossjunior@gmail.com)
-[Moises Savedra Omena](omena@gmail.com)
+* [Paulo Sérgio dos Santos Júnior](paulossjunior@gmail.com)
+* [Moises Savedra Omena](omena@gmail.com)
