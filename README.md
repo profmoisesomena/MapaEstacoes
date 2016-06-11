@@ -156,6 +156,8 @@ O Banco de dados foi gerado a patir de médias mensais de precipitação referen
 * [__10 minutes to Pandas__](http://pandas.pydata.org/pandas-docs/stable/10min.html)
 * [__Virtualenv: Ambientes virtuais para desenvolvimento__](https://pythonhelp.wordpress.com/2012/10/17/virtualenv-ambientes-virtuais-para-desenvolvimento/)
 * [__Construindo uma aplicação com Flask, Postgresql e OpenShift__](https://blog.openshift.com/build-your-app-on-openshift-using-flask-sqlalchemy-and-postgresql-92/)
+* [__Obtendo imagens de satelites__](http://www.dgi.inpe.br/CDSR/)
+* [__15 Free Satellite Imagery Data Sources__](http://gisgeography.com/free-satellite-imagery-data-list/)
 
 ##Autores
 * [Paulo Sérgio dos Santos Júnior](paulossjunior@gmail.com)
