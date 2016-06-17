@@ -160,5 +160,6 @@ O Banco de dados foi gerado a patir de médias mensais de precipitação referen
 * [__15 Free Satellite Imagery Data Sources__](http://gisgeography.com/free-satellite-imagery-data-list/)
 
 ##Autores
+* [Moises Savedra Omena](prof.moisesomena@gmail.com)
 * [Paulo Sérgio dos Santos Júnior](paulossjunior@gmail.com)
-* [Moises Savedra Omena](omena@gmail.com)
+
